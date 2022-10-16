@@ -1,7 +1,7 @@
 import random
 
 
-def print_scaffold(gueses, word):
+def print_scaffold(guesses, word):
     if (guesses == 0):
         print("_____________")
         print("|      |")
