@@ -38,7 +38,7 @@ def print_scaffold(guesses, word):
         print("_____________")
         print("|      |")
         print("|      o")
-        print("|     /|\ ")
+        print("|    //|\\ ")
         print("|      |")
         print("|")
         print("|____________")
@@ -46,7 +46,7 @@ def print_scaffold(guesses, word):
         print("_____________")
         print("|      |")
         print("|      o")
-        print("|     /|\ ")
+        print("|    //|\\ ")
         print("|      |")
         print("|     / ")
         print("|____________")
@@ -54,9 +54,9 @@ def print_scaffold(guesses, word):
         print("_____________")
         print("|      |")
         print("|      o")
-        print("|     /|\ ")
+        print("|    //|\\ ")
         print("|      |")
-        print("|     / \ ")
+        print("|    // \\ ")
         print("|____________")
         print("\n")
         print("The word was " + word + ".")
@@ -71,14 +71,13 @@ def print_scaffold(guesses, word):
 
 
 def select_word():
-    file = open("WORDS.txt", "r")
+    file = open("WORDS.txt", "r", encoding="utf8")
     words = file.readlines()
 
     myword = 'a'
     while len(myword) < 3:
         myword = random.choice(words)
         myword = str(myword).strip('[]')
-        myword = str(myword).strip("''")
         myword = str(myword).strip("\n")
         myword = str(myword).strip("\r")
     myword = myword.lower()
