@@ -1,31 +1,70 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Python Hangman Project
+This project is a simple and quick hangman game created with a complex range of words. 
+The game has been built with python and deployed with Heroku. 
+The idea is to guess the hidden word in a certain amount of tries before the man is fully hanged.
 
-Welcome J-cw,
+[Link to my code via Github pages](https://github.com/J-cw/python-hangman)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[Link to my Application deployed by Heroku](https://python-hangman-jacob.herokuapp.com/)
 
-## Reminders
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How To Play
+To begin you must guess a random letter a-z in hopes that it is included in the chosen letter, otherwise it will begin to take a life off've you. This continues throughout until A. the player runs out of lives or B. the player guesses the full word in its entirety.
 
-## Creating the Heroku app
+## Features
+### Existing Features
+* Random word function
+    * A random word is picked out've the words.txt file
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* A check to see if the letter is within the hidden letter
+    * If it isn't it will prompt the user to guess again.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* Limited lives function
+    * The user only has a limited amount of guesses before the game is over.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+### Future Features
+* A leaderboard of which calculates the highest scoring users based off've the complexity of the word given as well as the amount of lives they lost.
 
-## Constraints
+* A selection of difficulty to allow the user to change between levels of 1-5 (perhaps higher) to increase the challenge and allow for more progression
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* A connected spreadsheet to use instead of a words.txt file where the program can access the spreadsheet for said leaderboard or for an easier option to add extra words.
 
------
-Happy coding!
+* A login system to allow to user to login to see their progress and current overall place on the leaderboards.
+
+
+## Testing
+* The Code Institute add-ons tested sufficiently within the program so I adjusted those errors accordingly.
+
+* Tested from both Gitpod terminal and Heroku site. 
+
+
+## bugs
+### Solved Bugs
+### Remaining bugs
+* I can see that any input can be placed into the input prompts in multiple areas. In the future I will need to add validation techniques to raise value errors ect to disable the possibilty of flase inputs and enabling a restart of the game once over.
+## Validator Testing
+* Built into Code Institute template. Add-ons allow for error checking.
+* Pep8 website down for testing.
+## Deployment
+* Instructions for deployment
+    * Fork or clone Repository which is stored on Github.
+    * Create Heroku account or login
+    * Create new app - enter name of app and assign region.
+    * If your using a creds.json file then go to Heroku settings and click "reveal config vars". 
+        * In key type CREDS and in value paste your whole creds.json file text.
+        * Again if you don't need to use creds.json file then skip to next step.
+    * Add Buildpack then click python, then click add Buildpack again and add node.js. 
+        * Make sure Python is first then node.js second.
+    * Go to Deploy section in Heroku.
+    * Click Github for deployment. Then click connect to Github. Login to Github to connect Heroku to Github.
+        * Then type in your repo name and hit search.
+        * Click connect to connect your project repo to Heroku.
+    * Scroll down to Enable Automatic deployments. This updates your Heroku everytime your Github repo is updated.
+        * e.g after you push any changes in github.
+
+
+## Credits
+* https://www.hangmanwords.com/words 
+    * For the list of words used in the program.
