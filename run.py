@@ -68,3 +68,9 @@ def print_scaffold(guesses, word):
             hangman()
         elif again == "no":
             quit()
+
+
+def selectWord():
+    file = open("WORDS.txt", "r")
+    words = file.readlines()
+    
