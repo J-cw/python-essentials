@@ -83,3 +83,76 @@ def selectWord():
         myword = str(myword).strip("\r")
     myword = myword.lower()
     return myword
+
+
+def hangman():
+    guesses = 0
+    word = selectWord()
+    word_list = list(word)
+    blanks = "_" * len(word)
+    blanks_list = list(blanks)
+    new_blanks_list = list(blanks)
+    guess_list = []
+
+    print("Let's play hangman\n")
+    print_scaffold(guesses, word)
+    print("\n")
+    print(" " + ' '.join(blanks_list))
+    print("\n")
+    print("Guess a letter.\n")
+
+    while guesses < 6:
+        guess = (input(">>> "))
+        guess = guess.lower()
+
+        if len(guess) > 1:
+            print("Enter 1 letter at a time, please ")
+
+        elif guess == "":
+            print("What is your letter?")
+
+        elif guess in guess_list:
+            print("You have already guessed that one! Letter(s) used: ")
+            print(''.join(guess_list))
+            # show the player the letter that is already guessed
+
+        else:
+            guess_list.append(guess)
+            i = 0
+            while i < len(word):
+                if guess == word[i]:
+                    new_blanks_list[i] = word_list[i]
+                i = i + 1
+
+            if new_blanks_list == blanks_list:
+                print("Your letter isn't here.")
+                guesses = guesses + 1
+                print_scaffold(guesses, word)
+
+                if guesses < 6:
+                    print("Guess again.")
+                    print('' .join(blanks_list))
+
+            elif word_list != blanks_list:
+                blanks_list = new_blanks_list[:]
+                print("".join(blanks_list))
+
+                if word_list == blanks_list:
+                    print("You Win! Congratulations!:")
+                    print("\n")
+                    print("Do you want to play again?(Yes/No")
+                    again = input(":")
+                    if again == "Yes" or again == "yes":
+                        hangman()
+                    quit()
+
+                else:
+                    print("Correct! Another?")
+
+
+def main():
+
+    hangman()
+
+
+main()
