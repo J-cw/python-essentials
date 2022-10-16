@@ -2,7 +2,7 @@ import random
 
 
 def print_scaffold(guesses, word):
-    if (guesses == 0):
+    if guesses == 0:
         print("_____________")
         print("|      |")
         print("|")
@@ -10,7 +10,7 @@ def print_scaffold(guesses, word):
         print("|")
         print("|")
         print("|_____________")
-    elif (guesses == 1):
+    elif guesses == 1:
         print("_____________")
         print("|      |")
         print("|      o")
@@ -18,7 +18,7 @@ def print_scaffold(guesses, word):
         print("|")
         print("|")
         print("|_____________")
-    if (guesses == 2):
+    if guesses == 2:
         print("_____________")
         print("|      |")
         print("|      o")
@@ -26,7 +26,7 @@ def print_scaffold(guesses, word):
         print("|      |")
         print("|")
         print("|____________")
-    if (guesses == 3):
+    if guesses == 3:
         print("_____________")
         print("|      |")
         print("|      o")
@@ -34,7 +34,7 @@ def print_scaffold(guesses, word):
         print("|      |")
         print("|")
         print("|____________")
-    if (guesses == 4):
+    if guesses == 4:
         print("_____________")
         print("|      |")
         print("|      o")
@@ -42,7 +42,7 @@ def print_scaffold(guesses, word):
         print("|      |")
         print("|")
         print("|____________")
-    if (guesses == 5):
+    if guesses == 5:
         print("_____________")
         print("|      |")
         print("|      o")
@@ -50,7 +50,7 @@ def print_scaffold(guesses, word):
         print("|      |")
         print("|     / ")
         print("|____________")
-    if (guesses == 6):
+    if guesses == 6:
         print("_____________")
         print("|      |")
         print("|      o")
@@ -70,7 +70,7 @@ def print_scaffold(guesses, word):
             quit()
 
 
-def selectWord():
+def select_word():
     file = open("WORDS.txt", "r")
     words = file.readlines()
 
@@ -87,7 +87,7 @@ def selectWord():
 
 def hangman():
     guesses = 0
-    word = selectWord()
+    word = select_word()
     word_list = list(word)
     blanks = "_" * len(word)
     blanks_list = list(blanks)
