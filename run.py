@@ -73,4 +73,13 @@ def print_scaffold(guesses, word):
 def selectWord():
     file = open("WORDS.txt", "r")
     words = file.readlines()
-    
+
+    myword = 'a'
+    while len(myword) < 3:
+        myword = random.choice(words)
+        myword = str(myword).strip('[]')
+        myword = str(myword).strip("''")
+        myword = str(myword).strip("\n")
+        myword = str(myword).strip("\r")
+    myword = myword.lower()
+    return myword
